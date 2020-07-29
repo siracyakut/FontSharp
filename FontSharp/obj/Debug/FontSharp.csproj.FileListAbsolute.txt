@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\FontSharp\FontSharp\bin\Debug\FontSharp.dll
+C:\Users\user\source\repos\FontSharp\FontSharp\bin\Debug\FontSharp.pdb
+C:\Users\user\source\repos\FontSharp\FontSharp\obj\Debug\FontSharp.csprojAssemblyReference.cache
+C:\Users\user\source\repos\FontSharp\FontSharp\obj\Debug\FontSharp.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\FontSharp\FontSharp\obj\Debug\FontSharp.dll
+C:\Users\user\source\repos\FontSharp\FontSharp\obj\Debug\FontSharp.pdb
