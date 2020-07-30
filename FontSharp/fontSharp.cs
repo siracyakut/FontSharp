@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 
 namespace FontSharp
 {
@@ -12,16 +13,23 @@ namespace FontSharp
 
         public static Font YeniFont(byte[] fontDosya, float fontSize)
         {
-            PrivateFontCollection fonts = new PrivateFontCollection();
-            byte[] fontData = fontDosya;
-            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
-            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-            uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, fontDosya.Length);
-            AddFontMemResourceEx(fontPtr, (uint)fontDosya.Length, IntPtr.Zero, ref dummy);
-            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
-            Font f = new Font(fonts.Families[0], fontSize);
-            return f;
+            try
+            {
+                PrivateFontCollection fonts = new PrivateFontCollection();
+                byte[] fontData = fontDosya;
+                IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+                System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+                uint dummy = 0;
+                fonts.AddMemoryFont(fontPtr, fontDosya.Length);
+                AddFontMemResourceEx(fontPtr, (uint)fontDosya.Length, IntPtr.Zero, ref dummy);
+                System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+                Font f = new Font(fonts.Families[0], fontSize);
+                return f;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

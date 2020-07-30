@@ -4,7 +4,7 @@
 # FontSharp
 
 C# için yazılmış kısa yoldan font ekleme kütüphanesi.<br>
-Versiyon: *1.0.0*
+Versiyon: *1.0.1*
 
 # Kurulum
 
